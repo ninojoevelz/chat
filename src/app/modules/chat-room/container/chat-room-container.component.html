@@ -1,1 +1,29 @@
-<p>chat-room-container works!</p>
+<section class="messages">
+  <ul class="message-list">
+    <ng-container *ngFor="let message of messages">
+      <ng-container *ngIf="message.username !== 'Admin'; else adminTemplate">
+        <li class="message" [fxFlexAlign]="message.isOwner ? 'flex-end' : 'flex-start'">
+          <div class="message__box">{{ message.text }}</div>
+          <div class="message__info" [fxLayoutAlign]="message.isOwner ? 'flex-end' : 'flex-start'">
+            <span>{{ message.username }} - {{ message.createdAt | date:'short' }}</span>
+          </div>
+        </li>
+      </ng-container>
+      <ng-template #adminTemplate>
+        <li style="text-align: center; margin-bottom: 10px">
+          <em>{{ message.text }} - {{ message.createdAt | date:'short' }}</em>
+        </li>
+      </ng-template>
+    </ng-container>
+  </ul>
+</section>
+<section class="entry">
+  <form class="entry-form" fxLayoutGap="20px" [formGroup]="messageFormGroup">
+    <div class="entry-form__input" fxFlex="100">
+      <input type="text" placeholder="Type your message here..." formControlName="message">
+    </div>
+    <button type="submit" (click)="onSend()" color="primary" mat-fab>
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</section>

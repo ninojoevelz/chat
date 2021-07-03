@@ -3,33 +3,31 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { ChatRoomResolverService } from './chat-room-resolver.service';
-import { ChatRoomRoutingModule } from './chat-room-routing.module';
-import { ChatRoomContainerComponent } from './container/chat-room-container.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { JoinRoomContainerComponent } from './container/join-room-container.component';
+import { JoinRoomRoutingModule } from './join-room-routing.module';
 
 const materials = [
-  MatFormFieldModule,
+  MatCardModule,
   MatInputModule,
+  MatFormFieldModule,
   MatButtonModule,
-  MatIconModule,
-];
+  MatSnackBarModule
+]
 
 @NgModule({
   declarations: [
-    ChatRoomContainerComponent
+    JoinRoomContainerComponent
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
-    ChatRoomRoutingModule,
     ReactiveFormsModule,
+    JoinRoomRoutingModule,
     ...materials
-  ],
-  providers: [
-    ChatRoomResolverService,
   ]
 })
-export class ChatRoomModule { }
+export class JoinRoomModule { }

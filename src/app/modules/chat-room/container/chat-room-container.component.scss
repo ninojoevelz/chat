@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 75%;
+  margin-left: auto;
+  background-color: #fff;
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 100px);
+    border-bottom: 1px solid;
+    padding: 20px;
+    margin-top: auto;
+    overflow-y: scroll;
+  }
+
+  .message-list {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .message {
+    margin-bottom: 20px;
+  }
+
+  .message__box {
+    box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .message__info {}
+
+  .entry {
+    height: 100px;
+    padding: 20px;
+  }
+
+  .entry-form__input {
+    input {
+      border: none;
+      outline: none;
+      width: 100%;
+      padding: 20px 10px;
+      line-height: 1.25em;
+    }
+  }
+}

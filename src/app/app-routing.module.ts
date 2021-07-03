@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login',
-    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
+    path: 'join-room',
+    loadChildren: () => import('./modules/join-room/join-room.module').then(m => m.JoinRoomModule)
   },
   {
     path: 'chat-room',
@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'login',
+    redirectTo: 'join-room',
     pathMatch: 'full'
   }
 ];

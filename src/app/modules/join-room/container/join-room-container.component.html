@@ -1,0 +1,16 @@
+<mat-card>
+  <h1 mat-card-title>Login</h1>
+  <mat-card-content>
+    <form [formGroup]="joinRoomFormGroup" fxLayout="column" fxLayoutGap="20px">
+      <mat-form-field>
+        <input type="text" placeholder="Username" formControlName="username" matInput required>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" placeholder="Room" formControlName="room" matInput required>
+      </mat-form-field>
+      <button type="submit" [disabled]="joinRoomFormGroup.invalid" (click)="onEnterRoom()" color="accent" mat-raised-button>
+        Enter Room
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
